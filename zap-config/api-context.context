@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <context>API Security Testing Context</context>
+    <name>API Security Testing Context</name>
+    <desc>Context configuration for API security testing with Moderor</desc>
+    <inscope>true</inscope>
+    <incregexes>
+        <incregex regex=".*" enabled="true" />
+    </incregexes>
+    <excregexes>
+        <excregex regex=".*\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$" enabled="true" />
+    </excregexes>
+
+    <!-- Authentication Configuration -->
+    <authentication>
+        <type>0</type> <!-- Manual Authentication -->
+        <strategy>0</strategy>
+        <pollfreq>60</pollfreq>
+        <pollunits>1</pollunits>
+    </authentication>
+
+    <!-- Session Management -->
+    <session>
+        <type>0</type> <!-- Cookie-based Session Management -->
+    </session>
+
+    <!-- Authorization -->
+    <authorization>
+        <type>0</type> <!-- No Authorization -->
+    </authorization>
+
+    <!-- Technology Stack -->
+    <tech>
+        <include>JSON</include>
+        <include>REST</include>
+        <include>API</include>
+        <include>GraphQL</include>
+        <exclude>OS</exclude>
+        <exclude>DB</exclude>
+        <exclude>WS</exclude>
+    </tech>
+
+    <!-- URL Parameters -->
+    <urlparser>
+        <target>
+            <url>.*</url>
+            <regex>true</regex>
+        </target>
+    </urlparser>
+
+    <!-- Data Driven Nodes -->
+    <dd>
+        <dd>true</dd>
+    </dd>
+
+    <!-- WebSocket Configuration -->
+    <websocket>
+        <enabled>true</enabled>
+    </websocket>
+</configuration>

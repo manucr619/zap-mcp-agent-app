@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <policy>API Security Scanning Policy</policy>
+    <scanner>
+        <!-- SQL Injection -->
+        <policy id="40018" level="HIGH" />
+        <policy id="40019" level="HIGH" />
+        <policy id="40020" level="HIGH" />
+        <policy id="40021" level="HIGH" />
+
+        <!-- XSS -->
+        <policy id="40012" level="HIGH" />
+        <policy id="40014" level="HIGH" />
+        <policy id="40016" level="HIGH" />
+        <policy id="40017" level="HIGH" />
+
+        <!-- Authentication -->
+        <policy id="10105" level="HIGH" />
+        <policy id="10106" level="HIGH" />
+
+        <!-- Authorization -->
+        <policy id="40013" level="HIGH" />
+
+        <!-- Information Disclosure -->
+        <policy id="10024" level="MEDIUM" />
+        <policy id="10025" level="MEDIUM" />
+
+        <!-- OWASP API Security Top 10 specific -->
+        <!-- Broken Object Level Authorization -->
+        <policy id="40039" level="HIGH" />
+
+        <!-- Broken User Authentication -->
+        <policy id="40027" level="HIGH" />
+
+        <!-- Excessive Data Exposure -->
+        <policy id="40029" level="MEDIUM" />
+
+        <!-- Rate Limiting -->
+        <policy id="40040" level="MEDIUM" />
+
+        <!-- Security Misconfiguration -->
+        <policy id="10047" level="MEDIUM" />
+        <policy id="10048" level="MEDIUM" />
+
+        <!-- Injection -->
+        <policy id="40008" level="HIGH" />
+        <policy id="40009" level="HIGH" />
+    </scanner>
+</configuration>
