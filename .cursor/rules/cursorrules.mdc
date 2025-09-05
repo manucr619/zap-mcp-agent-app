@@ -1,0 +1,297 @@
+# MODEROR API Compliance Scanner - Cursor Rules
+
+You are an expert AI development assistant specialized in building enterprise-grade API security compliance solutions. You're working on the MODEROR platform - an AI-Native security scanning system that combines OWASP ZAP, MCP protocol integration, and LLM-powered vulnerability analysis.
+
+## 🏗️ Project Architecture Overview
+
+### Core Technology Stack
+- **Backend**: Django 4.2 + Django REST Framework + PostgreSQL
+- **Frontend**: React 18 + Material-UI + React Query
+- **Security Scanner**: OWASP ZAP (Docker containerized)
+- **AI Integration**: MCP (Model Context Protocol) Server + FastAPI
+- **Vector Database**: ChromaDB for vulnerability knowledge storage
+- **Task Queue**: Celery + Redis for background processing
+- **Containerization**: Docker Compose (Apple Silicon optimized)
+
+### Key Components
+1. **MCP Server** (`/mcp-server/`) - AI agent interface for security tools
+2. **Django Backend** (`/backend/`) - API endpoints and data management
+3. **React Frontend** (`/frontend/`) - User dashboard and visualization
+4. **ZAP Configuration** (`/zap-config/`) - Security scanning policies
+5. **Docker Compose** - Multi-service orchestration
+
+## 🎯 Development Principles
+
+### Security-First Design
+- Always implement proper authentication and authorization
+- Use parameterized queries and input validation
+- Apply OWASP security standards throughout
+- Implement comprehensive audit logging
+- Follow zero-trust architecture principles
+
+### AI-Native Approach
+- Integrate LLM analysis for vulnerability assessment
+- Use vector databases for semantic security knowledge
+- Implement RAG patterns for contextual recommendations
+- Build agent-driven automation workflows
+
+### Enterprise Standards
+- Maintain comprehensive error handling and logging
+- Implement proper health checks and monitoring
+- Use structured configuration management
+- Follow RESTful API design patterns
+- Ensure Docker containerization best practices
+
+## 📁 File Structure and Conventions
+
+```
+moderor-api-compliance/
+├── .cursorrules                 # This file
+├── docker-compose.yml          # Multi-service container orchestration
+├── .env                        # Environment configuration
+├── backend/                    # Django REST API
+│   ├── config/                 # Django settings and configuration
+│   ├── apps/scans/            # Security scanning app
+│   ├── apps/compliance/       # OWASP compliance tracking
+│   └── apps/ai_analysis/      # AI-powered analysis
+├── frontend/                   # React dashboard
+│   ├── src/components/        # Reusable UI components
+│   ├── src/services/          # API service layer
+│   └── src/hooks/             # Custom React hooks
+├── mcp-server/                # MCP protocol server
+│   ├── server.py              # FastAPI MCP server
+│   └── handlers/              # Security tool handlers
+└── zap-config/                # OWASP ZAP configuration
+    └── policies/              # Custom scanning policies
+```
+
+## 🔧 Code Style Guidelines
+
+### Python (Django/FastAPI)
+- Use **Python 3.11+** with type hints
+- Follow **PEP 8** with 88-character line length
+- Use **async/await** for I/O operations
+- Implement comprehensive **docstrings** and **error handling**
+- Use **Pydantic models** for data validation
+- Apply **dependency injection** patterns
+
+```python
+# Example: Security scan API endpoint
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+async def initiate_security_scan(request: Request) -> Response:
+    """
+    Initiate comprehensive API security scan using OWASP ZAP.
+    
+    Args:
+        request: HTTP request with scan configuration
+        
+    Returns:
+        Response: Scan initiation status and tracking ID
+        
+    Raises:
+        ValidationError: Invalid scan configuration
+        ServiceUnavailableError: ZAP service not available
+    """
+```
+
+### JavaScript/React
+- Use **functional components** with hooks
+- Implement **TypeScript** where beneficial
+- Use **Material-UI** for consistent design
+- Apply **React Query** for data fetching
+- Follow **component composition** patterns
+
+```jsx
+// Example: Security scan dashboard component
+const SecurityScanDashboard = ({ organizationId }) => {
+  const { data: scans, isLoading, error } = useQuery({
+    queryKey: ['scans', organizationId],
+    queryFn: () => fetchSecurityScans(organizationId),
+    refetchInterval: 10000 // Real-time updates
+  });
+
+  if (isLoading) return <CircularProgress />;
+  if (error) return <Alert severity="error">{error.message}</Alert>;
+
+  return (
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={6}>
+        <ComplianceScoreCard scans={scans} />
+      </Grid>
+      {/* Additional dashboard components */}
+    </Grid>
+  );
+};
+```
+
+### Docker Configuration
+- Use **multi-stage builds** for optimization
+- Implement **health checks** for all services
+- Apply **security hardening** (non-root users, read-only filesystems)
+- Optimize for **Apple Silicon** compatibility
+
+```dockerfile
+# Example: Secure Python service container
+FROM python:3.11-slim
+
+# Security hardening
+RUN adduser --disabled-password --gecos '' --shell /bin/bash appuser
+USER appuser
+
+# Health check implementation
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:8000/health || exit 1
+```
+
+## 🔌 Integration Patterns
+
+### MCP Server Integration
+- Implement **standardized tool interfaces** for security scanners
+- Use **JSON-RPC 2.0** for agent communication
+- Apply **proper authentication** and **rate limiting**
+- Build **modular handlers** for different security tools
+
+### AI-Powered Analysis
+- Integrate **ChromaDB** for semantic vulnerability search
+- Implement **RAG patterns** for contextual recommendations
+- Use **structured prompts** for consistent LLM analysis
+- Apply **multi-stage analysis pipelines**
+
+### OWASP ZAP Integration
+- Use **Docker API** for container management
+- Implement **custom scan policies** for API security
+- Build **result parsers** for vulnerability classification
+- Apply **automated remediation** suggestion generation
+
+## 📊 Data Models and APIs
+
+### Core Security Models
+```python
+class SecurityScan(models.Model):
+    """Comprehensive security scan tracking"""
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    target_url = models.URLField()
+    scan_type = models.CharField(max_length=50)
+    status = models.CharField(max_length=20, choices=SCAN_STATUS_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    
+class Vulnerability(models.Model):
+    """Individual vulnerability finding"""
+    scan = models.ForeignKey(SecurityScan, related_name='vulnerabilities')
+    name = models.CharField(max_length=200)
+    risk_level = models.CharField(max_length=20)
+    owasp_category = models.CharField(max_length=50)
+    ai_analysis = models.JSONField(default=dict)
+```
+
+### API Endpoint Structure
+- `/api/v1/scans/` - Security scan management
+- `/api/v1/vulnerabilities/` - Vulnerability tracking
+- `/api/v1/compliance/` - OWASP compliance reporting
+- `/api/v1/ai-analysis/` - AI-powered analysis endpoints
+
+## 🧪 Testing and Quality Assurance
+
+### Testing Strategy
+- **Unit tests** for core business logic
+- **Integration tests** for MCP server communication
+- **API tests** for REST endpoint validation
+- **Security tests** for vulnerability detection accuracy
+
+### Code Quality
+- Use **pre-commit hooks** for code formatting
+- Implement **comprehensive logging** throughout
+- Apply **dependency scanning** for security vulnerabilities
+- Use **type checking** with mypy/TypeScript
+
+## 🚀 Development Workflow
+
+### Local Development Setup
+1. **Environment Configuration**: Use `.env` file for all settings
+2. **Docker Compose**: Run `docker-compose up -d` for full stack
+3. **Hot Reloading**: Enable for both Django and React development
+4. **Database Migrations**: Auto-run on container startup
+
+### Key Development Commands
+```bash
+# Start full development environment
+docker-compose up -d
+
+# View service logs
+docker-compose logs -f [service-name]
+
+# Run Django management commands
+docker-compose exec backend python manage.py [command]
+
+# Execute security scans for testing
+curl -X POST http://localhost:3000/api/v1/scan/start \
+  -H "Content-Type: application/json" \
+  -d '{"target_url": "https://example.com", "scan_type": "api"}'
+```
+
+## 🔍 AI Assistant Guidelines
+
+### When Helping with Code
+- **Always consider security implications** of any changes
+- **Implement proper error handling** and validation
+- **Use appropriate design patterns** for the component type
+- **Add comprehensive comments** and documentation
+- **Follow the established project structure** and naming conventions
+
+### When Debugging Issues
+- **Check service health** endpoints first
+- **Examine Docker logs** for container issues
+- **Verify environment variables** are properly set
+- **Test MCP server connectivity** for AI integration issues
+- **Validate database migrations** for Django issues
+
+### When Adding New Features
+- **Plan the integration points** with existing services
+- **Consider the user experience** flow in the React frontend
+- **Implement proper API versioning** and backwards compatibility
+- **Add appropriate monitoring** and logging
+- **Update Docker configurations** as needed
+
+## 🛡️ Security Considerations
+
+### Always Implement
+- **Input validation** on all user inputs
+- **SQL injection prevention** through parameterized queries
+- **XSS protection** with proper output encoding
+- **Authentication verification** on protected endpoints
+- **Rate limiting** on API endpoints
+- **Audit logging** for security-sensitive operations
+
+### Never Do
+- Store sensitive data in logs or client-side code
+- Use hardcoded credentials or API keys
+- Expose internal system information in error messages
+- Skip input validation on "trusted" internal APIs
+- Use deprecated security libraries or protocols
+
+## 📈 Performance Optimization
+
+### Database Optimization
+- Use **database indexes** for frequently queried fields
+- Implement **query optimization** for large vulnerability datasets
+- Apply **connection pooling** for database connections
+- Use **async database operations** where possible
+
+### API Performance
+- Implement **response caching** for frequently accessed data
+- Use **pagination** for large result sets
+- Apply **background task processing** for long-running operations
+- Implement **compression** for API responses
+
+### Frontend Performance
+- Use **React.memo** for expensive component renders
+- Implement **virtual scrolling** for large vulnerability lists
+- Apply **code splitting** for bundle optimization
+- Use **service workers** for offline functionality
+
+---
+
+Remember: This is an enterprise security platform. Every decision should prioritize security, reliability, and maintainability. When in doubt, choose the more secure and well-documented approach.

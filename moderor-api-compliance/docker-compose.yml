@@ -1,0 +1,170 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Redis for Caching & Task Queue
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ChromaDB Vector Database
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - chromadb_data:/chroma/chroma
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # OWASP ZAP Scanner
+  zap-scanner:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./zap-config:/zap/config:ro
+      - zap_reports:/zap/reports:rw
+    environment:
+      - ZAP_PORT=8080
+    command: zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true -config api.key=mmj20h6beqgt9v7re1d55mr89012345
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  # MCP Server for AI Agent Integration
+  mcp-server:
+    build:
+      context: ./mcp-server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - zap-scanner
+      - chromadb
+    environment:
+      - ZAP_HOST=${ZAP_HOST}
+      - ZAP_PORT=${ZAP_PORT}
+      - CHROMA_HOST=${CHROMA_HOST}
+      - CHROMA_PORT=${CHROMA_PORT}
+    volumes:
+      - ./mcp-server:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Django Backend
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8001:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      mcp-server:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
+      - MCP_SERVER_HOST=${MCP_SERVER_HOST}
+      - MCP_SERVER_PORT=${MCP_SERVER_PORT}
+    volumes:
+      - ./backend:/app
+      - scan_reports:/app/reports
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:8001
+      - REACT_APP_WS_URL=ws://localhost:8001/ws
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+  # Celery Worker for Background Tasks
+  celery-worker:
+    build:
+      context: ./backend
+    depends_on:
+      - backend
+      - redis
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+    volumes:
+      - ./backend:/app
+      - scan_reports:/app/reports
+    command: celery -A config worker --loglevel=info --concurrency=2
+
+  # Celery Beat for Scheduled Tasks
+  celery-beat:
+    build:
+      context: ./backend
+    depends_on:
+      - backend
+      - redis
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+    volumes:
+      - ./backend:/app
+    command: celery -A config beat --loglevel=info
+
+volumes:
+  postgres_data:
+  redis_data:
+  chromadb_data:
+  zap_reports:
+  scan_reports:
+
+networks:
+  default:
+    driver: bridge
