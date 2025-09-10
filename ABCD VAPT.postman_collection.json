@@ -1,0 +1,1047 @@
+{
+	"info": {
+		"_postman_id": "03bb1059-7a6d-4794-8c67-0b5c94e33bfe",
+		"name": "ABCD VAPT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31348913"
+	},
+	"item": [
+		{
+			"name": "Inbound",
+			"item": [
+				{
+					"name": "Sprinklr Create Case",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI0cmxqbzdsbTBtdjV2N3FwczhrOXRuMWx1aCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkYy1hcGlnXC9hdXRoLWFiY2QiLCJhdXRoX3RpbWUiOjE3MzgyMjgzNDksImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfMEg4dHhCb1hVIiwiZXhwIjoxNzM4MjMxOTQ5LCJpYXQiOjE3MzgyMjgzNDksInZlcnNpb24iOjIsImp0aSI6ImExZDljM2Q2LWI4NzctNDc0ZC05Y2FlLWNlZmQyOWM1YzQzMyIsImNsaWVudF9pZCI6IjRybGpvN2xtMG12NXY3cXBzOGs5dG4xbHVoIn0.SZrdxn5T2kBSWVtRGcw_f8kmrCWO3urWbei8w-USZ7OlWsdY8CBPIIeJohob2EqsfFARL-75tQYLgiTnOANFS8scP8MF_0D7xip161MR8v9398qv6YmlP1Momuf1s4sVg-Mb4OmtARFKBYFoXcPWCq_1viAa_ABuv4IKF-q0__0ggkLMtpkEmL9bOzAXqL14N_CfR-hzPkRiOWUDKlh_MY3jEL1Mrs8c4CXkupeK5tXZTP1G85QGTMBN2tg2HK6t60PIZ5jx55uiO-BxXwKjAs0q4pnCdBYp-fPGmlmfKca4Hd22372kElUC_WuRuKyqvCyWXq5WqNOl8lxyVGlq8Q"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "sess_map=rwywddzcerdwqetcxfcsrwsuezcrsyexzttbvvytwqtfcdabxvbcsttcbuerbzdscteffctudddsstvqurfywvzwfaceacstqztdqrtrswrzqwtyutewtzzbdbaffusfzazvabcfzbxtyraazvrqsfdqfdwvqsfetsyrwqqwuwstdddq; XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Function__c\": \"HI\",\n    \"Account_Holding\": \"test\",\n    \"Social_Media\": \"X\",\n    \"Other\": \"test\",\n    \"Client_Code\": \"111155\",\n    \"IssueTypeCode\": \"ABCD_Sprinklr_01\",\n    \"Source\": \"Social Media\",\n    \"Channel\": \"Social Media\",\n    \"LAN\": \"1233\",\n    \"Description\": \"Case desc\",\n    \"Sprinklr_Case_Reference_Number\": \"SP_ABCD_000001\",\n    \"SuppliedEmail\": \"test@test.com\",\n    \"SuppliedPhone\": \"9049890627\",\n    \"SuppliedName\": \"John Smith\",\n    \"Parent_CaseNumber\": \"00624074\",\n    \"Escalation_Comment\": \"Social Media Auto Escalated Case\",\n    \"HWC\": \"\",\n    \"CXO_tagged\": \"\",\n    \"Sentiments\": \"\",\n    \"name_on_channel\": \"Test\",\n    \"channelType\": \"\",\n    \"channelId\": \"\",\n    \"followers_on_channel\": \"\",\n    \"Bio_on_channel\": \"\",\n    \"Attachments\": [\n        {\n            \"PathOnClient\": \"SoftCopy1.pdf\",\n            \"Title\": \"SoftCopy1\",\n            \"VersionData\": \"jgdsdgfdhfjvhglgigmhvnbvtdyt\"\n        },\n        {\n            \"PathOnClient\": \"SoftCopy2.pdf\",\n            \"Title\": \"SoftCopy2\",\n            \"VersionData\": \"jgdsdgfdhfjvhglgigmhvnbvtdyt\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/sfdc-abcd/createcase",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"sfdc-abcd",
+								"createcase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Case",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI0cmxqbzdsbTBtdjV2N3FwczhrOXRuMWx1aCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkYy1hcGlnXC9hdXRoLWFiY2QiLCJhdXRoX3RpbWUiOjE3MzgyMjgzNDksImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfMEg4dHhCb1hVIiwiZXhwIjoxNzM4MjMxOTQ5LCJpYXQiOjE3MzgyMjgzNDksInZlcnNpb24iOjIsImp0aSI6ImExZDljM2Q2LWI4NzctNDc0ZC05Y2FlLWNlZmQyOWM1YzQzMyIsImNsaWVudF9pZCI6IjRybGpvN2xtMG12NXY3cXBzOGs5dG4xbHVoIn0.SZrdxn5T2kBSWVtRGcw_f8kmrCWO3urWbei8w-USZ7OlWsdY8CBPIIeJohob2EqsfFARL-75tQYLgiTnOANFS8scP8MF_0D7xip161MR8v9398qv6YmlP1Momuf1s4sVg-Mb4OmtARFKBYFoXcPWCq_1viAa_ABuv4IKF-q0__0ggkLMtpkEmL9bOzAXqL14N_CfR-hzPkRiOWUDKlh_MY3jEL1Mrs8c4CXkupeK5tXZTP1G85QGTMBN2tg2HK6t60PIZ5jx55uiO-BxXwKjAs0q4pnCdBYp-fPGmlmfKca4Hd22372kElUC_WuRuKyqvCyWXq5WqNOl8lxyVGlq8Q"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"CaseNumber\": \"00624075\",\n    \"Source\": \"Social Media\",\n    \"Channel\": \"Social Media\",\n    \"Notes_from_Sprinklr\": \"Customer is following up\",\n    \"Attachments\": [\n        {\n            \"PathOnClient\": \"SoftCopy1.pdf\",\n            \"Title\": \"SoftCopy1\",\n            \"VersionData\": \"jgdsdgfdhfjvhglgigmhvnbvtdyt\"\n        },\n        {\n            \"PathOnClient\": \"SoftCopy2.pdf\",\n            \"Title\": \"SoftCopy2\",\n            \"VersionData\": \"jgdsdgfdhfjvhglgigmhvnbvtdyt\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/sfdc-abcd/updatecase",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"sfdc-abcd",
+								"updatecase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Lead",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "sess_map=qwtafvcxbzwrwuzeeusvqfubwurfabsdvfwarwtrucrzraesrcbvsxwwaqyfyrzuxwubvutvzeyvzxyxrxabarzrbuqqxbeuturaeercurbyffsssaueffuewtsftuafwwesuxabzzrrdbtfdxvadctfxusdqzsrqvtzcswuqzsxttdq"
+							},
+							{
+								"key": "x-api-key",
+								"value": "xczzbfnsCU2NBpLYAXh6Q1KTTNrFQDoX1tIo57ms"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"graphs\": [\n        {\n            \"graphId\": \"1\",\n            \"compositeRequest\": [\n                {\n                    \"method\": \"PATCH\",\n\n                    \"url\": \"/services/data/v60.0/sobjects/Lead/SFLMS_Lead_ID__c/00QNy00000KXvP0MAL\",\n                    \"referenceId\": \"refLead\",\n                    \"body\": {\n                        \"SFLMS_Status__c\": \"Closed/Won\",\n                        \"SFLMS_Status_Change_Date__c\": \"2025-11-02T06:30:00.000+0000\",\n                        \"LastName\":\"test\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/sfdc-abcd/updateleadfromsflms",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"sfdc-abcd",
+								"updateleadfromsflms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Outbound",
+			"item": [
+				{
+					"name": "User info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczNDQxMTc4OCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzQ0MTUzODgsImlhdCI6MTczNDQxMTc4OCwidmVyc2lvbiI6MiwianRpIjoiOGYyNDYzYzctMjAzZC00NDE4LWE1OTUtMWYxOWYwZWRmNmM0IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.pJ2HpW94VS4hUJlXg520SdL-tzbykne8WGPk_gIYQoBpBIKqLKyQ3rysZTwmPmSFRDk8GrbWF2GTuTUxpw7_lUzGxnOli9S2wDzIYID0dMtk5gJzuxTfpB5OWKvbHZN8gDqBeGB-bOICdbF5QaiiT7ygF53e6lGiJH17IGEDcARTpv-vOw8YcDPF4rQUV9B3ymOH9en2J9oOoyFAZxWr1XDNQiZhQRjq5A5xOiZMIvG8JtkYsvp39wX17A3fZGyjkMIUr_vTW6WeXYAJAPf1t9wFHJLf6tzMFpU8Q9675GJUh0yJa5yg_ld2VUQCiYVwxz4g8G7_uEOjwJYNTyiHBA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"977309265741\",\n    \"emailId\": \"pratik.beit@gmail.com\",\n    \"customerId\": \"19935\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getbasicinfo",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getbasicinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "holding id's",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczNDQxMTc4OCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzQ0MTUzODgsImlhdCI6MTczNDQxMTc4OCwidmVyc2lvbiI6MiwianRpIjoiOGYyNDYzYzctMjAzZC00NDE4LWE1OTUtMWYxOWYwZWRmNmM0IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.pJ2HpW94VS4hUJlXg520SdL-tzbykne8WGPk_gIYQoBpBIKqLKyQ3rysZTwmPmSFRDk8GrbWF2GTuTUxpw7_lUzGxnOli9S2wDzIYID0dMtk5gJzuxTfpB5OWKvbHZN8gDqBeGB-bOICdbF5QaiiT7ygF53e6lGiJH17IGEDcARTpv-vOw8YcDPF4rQUV9B3ymOH9en2J9oOoyFAZxWr1XDNQiZhQRjq5A5xOiZMIvG8JtkYsvp39wX17A3fZGyjkMIUr_vTW6WeXYAJAPf1t9wFHJLf6tzMFpU8Q9675GJUh0yJa5yg_ld2VUQCiYVwxz4g8G7_uEOjwJYNTyiHBA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"19931\",\n    \"lob\": \"LI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getholdingids",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getholdingids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "holdings Protection",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczNDQxMTc4OCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzQ0MTUzODgsImlhdCI6MTczNDQxMTc4OCwidmVyc2lvbiI6MiwianRpIjoiOGYyNDYzYzctMjAzZC00NDE4LWE1OTUtMWYxOWYwZWRmNmM0IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.pJ2HpW94VS4hUJlXg520SdL-tzbykne8WGPk_gIYQoBpBIKqLKyQ3rysZTwmPmSFRDk8GrbWF2GTuTUxpw7_lUzGxnOli9S2wDzIYID0dMtk5gJzuxTfpB5OWKvbHZN8gDqBeGB-bOICdbF5QaiiT7ygF53e6lGiJH17IGEDcARTpv-vOw8YcDPF4rQUV9B3ymOH9en2J9oOoyFAZxWr1XDNQiZhQRjq5A5xOiZMIvG8JtkYsvp39wX17A3fZGyjkMIUr_vTW6WeXYAJAPf1t9wFHJLf6tzMFpU8Q9675GJUh0yJa5yg_ld2VUQCiYVwxz4g8G7_uEOjwJYNTyiHBA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"977309265741\",\n    \"emailId\": \"pratik.beit@gmail.com\",\n    \"customerId\": \"19935\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getholdingprotection",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getholdingprotection"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "holdings Liabilities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTM3NzMyNCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzkzODA5MjQsImlhdCI6MTczOTM3NzMyNCwidmVyc2lvbiI6MiwianRpIjoiZDlmZWExZDUtNTAyMC00MjVhLThhNGItNjMxN2U5MTRjZDkyIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.fAvX6q2pdlNaEZ7yH6u_RM6udhydHIuxPrnuVAppMlHKpFZsWvpquba60ZnsnUaYLCltw8eyARqWwft85yIY1Dk1ZddaQJrl83yfFtA5U69w_Ux3WPgTeLXCW5BPA4BpIcWOhjCD8BNJOUqXTDWx-YKjrUh4bGvVUuNdoX1vNA5HDFcp6m4buDeQFLTJ17SYnDlSdUiTXNCIrd4uDRPOZN4F1rtfgQMhYoB93CDDHEe-HahzEJPVImqDy7QwjKybmK_8Olsv_hUabHd_LeAHOsMYw1jU64YpfpdEQtcbofeColkDVE9z4tjYnKAMJi7onoQeVgsh9m0uq8e4Sa808g"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n\n\n\n\n{\n    \"mobileNumber\": \"\",\n    \"emailId\": \"\",\n    \"customerId\": \"20009\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getholdingliabilities",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getholdingliabilities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "holdings Assets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczNDQxMjQ0NCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzQ0MTYwNDQsImlhdCI6MTczNDQxMjQ0NCwidmVyc2lvbiI6MiwianRpIjoiYTk4MDIxMmYtZTg2OC00OTkzLTgxNjQtMGUxOGI2OGJiZmEyIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.JoX22041QInxhcrSLFqsRZxQIeH1LeAUzLNvt4lzpTMWevd0LJogSlxD3jkcXiXX0lhF_boRrAbXiNnCPwgXR3mvrPY4POCqq5gCZKQLZfF-ZDYnsoNNsUbbHqfmVkBsDW-S54I-grmxwgATjvTpxs5xyLzl54scUZDEpApLbstm-ZiWnMMBo5upV-dfymhPvydiLHJV6qRqlozSX-EuT5qyVT3Be-p_gcQrmVs005dsIJFDeZtDVTJ8j8chfHghOESPKRi-INS8h1R_CrbBV5hrFeBrj3GzveRscbAsfNi_xf1MWOQObqi8qCDzPw1TR_4l1AP-Y4wwa9C8_R2yzA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"977309265741\",\n    \"emailId\": \"pratik.beit@gmail.com\",\n    \"customerId\": \"19935\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getholdingassets",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getholdingassets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "holdings Vas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc1NzM5OTE0NSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NTc0MDYzNDUsImlhdCI6MTc1NzM5OTE0NSwidmVyc2lvbiI6MiwianRpIjoiYjI2ZDk2Y2MtZWEyZi00YWIwLTkwMDMtZjA4YWFjODYxOGQ2IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.aWliRoJQ025op0nxJhygq1mnDqHrsbP4hgmaXW8Rlf1xVVU6YUOhqGyJAb0D0WT92ywq9h0SQZoG7zVr9PGvM-ITHMYzBcIlqlgl0HiZ2Iuk6WKqobr4xkANNrbjajM0csYR2rbnLVPrZFTKFgIeWs9FiSeolIfSbie4Pss0lWz7l190DUVSEOSgUEPmUYsweYh4-Nn6cxbfQ_lSVRB76zLdfT_tzHYbXleWg45_tPTWeLoIm5R0gjQ4i4VWKTOCW-DJNWRbYlZmF58c0MTX1T4lkQAtwqh2iW0M45W4fYC0xwxHmYz9lZeeAWlgMPNuShJWSX0enHI_qN8LCemfuQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"\",\n    \"emailId\": \"\",\n    \"customerId\": \"111550\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getholdingvas",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getholdingvas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Sync",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc1NzM5OTE0NSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NTc0MDYzNDUsImlhdCI6MTc1NzM5OTE0NSwidmVyc2lvbiI6MiwianRpIjoiYjI2ZDk2Y2MtZWEyZi00YWIwLTkwMDMtZjA4YWFjODYxOGQ2IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.aWliRoJQ025op0nxJhygq1mnDqHrsbP4hgmaXW8Rlf1xVVU6YUOhqGyJAb0D0WT92ywq9h0SQZoG7zVr9PGvM-ITHMYzBcIlqlgl0HiZ2Iuk6WKqobr4xkANNrbjajM0csYR2rbnLVPrZFTKFgIeWs9FiSeolIfSbie4Pss0lWz7l190DUVSEOSgUEPmUYsweYh4-Nn6cxbfQ_lSVRB76zLdfT_tzHYbXleWg45_tPTWeLoIm5R0gjQ4i4VWKTOCW-DJNWRbYlZmF58c0MTX1T4lkQAtwqh2iW0M45W4fYC0xwxHmYz9lZeeAWlgMPNuShJWSX0enHI_qN8LCemfuQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ABC_Cust_Id\": \"139147\",\n    \"Mobile\": \"9496400787\",\n    \"First_Name\": \"FNU\",\n    \"Last_Name\": \"Pintoo\",\n    \"Email\": \"\",\n    \"Customer_Since\": \"2025-09-09T12:20:17.351+0000\",\n    \"Line_of_Business\": \"ABCD\",\n    \"Customer_Type\": \"Individual\",\n    \"PAN_No\": \"\",\n    \"Full_Name\": \"Pintoo \",\n    \"Birthdate\": null,\n    \"HNI\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/sfdc-abcd/customersync",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"sfdc-abcd",
+								"customersync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Search By GoldenId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTMzODM5MywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzkzNDE5OTMsImlhdCI6MTczOTMzODM5MywidmVyc2lvbiI6MiwianRpIjoiZTIzNzJkMGUtOGUyNS00Zjc3LWEyMGYtNGFiYjAyNTNjZGJmIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.XSN7eMxmxgjttEGXZ157VQxb6MzBFvie4uv4Jl3-CatWA68cIfanEZaFUsJXICz96A8rPjhfFc4lSi4qNkfWmC3RWhw7tBBiietBKRn_8UpxZa-vjEx58p25kMx2CqsdYfJTYTJGenT7LtEH-sMsz8NGDvUegCbQEiU5Gjj-C02NXsigTW2G2ci60WUUkMcUCaslj1NHo4GWn2dqSJcA4vZDHOHsqqGPH73X9zzxsentOHF3MIGlfjzO6xuH8dfqu0UM1Drx8l4WlUnDkDFBEeGmy0p6wbyZedBKwgX6ysu3-lczYFoZsD23IQaLTEZpEeDLay2teZ7U9LK6wPZjcA"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Golden_Id\": \"\",\n    \"product_holding\": \"\",\n    \"LOB_Cust_Id\": \"8229736339\",\n    \"lob\": \"bsli\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-onecrm/customersearch",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-onecrm",
+								"customersearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Holdings Aggregated View",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTI4MTEwNiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzkyODQ3MDYsImlhdCI6MTczOTI4MTEwNiwidmVyc2lvbiI6MiwianRpIjoiM2ExYWI0ODEtNTAyZi00NzdjLTgwMDItMTlmYmIyZmRiNDBiIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.bGiP4yzLJuDPlvYYdc4UXTACFby5MtZzpylDEHJFeMWV7L2CBoZFN7xQy857IbDgnAaiaONG18VblQEMm9Wd_rAkSx5Ar_KdweJqcPVqmGcvoNERi6lKXTR2jAtRTuYmceRFJUnFE5HskkWSXxqN0E7YucKrPwSCZd9M2XBdWVTJqIlvhSKTBybw03Fk8zDleQDEazcAYi-g3wt37eazi8L32EdqGsqYYUplJJwZ393HLMuQZdH2PM9xWtGNG31p5ODZqQAHYHJPql3hylYKkyXKOVq9aS8-RwL7TUxDxTXNta7-tGUvOln-2Z4h0Pb5nWpV0Tk5fRwqbdIhT36DIw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Golden_id\": \"ABFSG-14074019\",\n    \"LOB\": \"BSLI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-oneabc/getproductholdingdetails",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-oneabc",
+								"getproductholdingdetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Demographic API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc0MTg0Nzk2MywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NDE4NTE1NjMsImlhdCI6MTc0MTg0Nzk2MywidmVyc2lvbiI6MiwianRpIjoiOTM3ZjYyNmQtMjViOC00ZTJmLTk3OWUtNmE3NGUxZmE1YmJhIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.FyuSPARFLX5gNWrfAEshUW86kgSsdiGk_eX9O7cmWLGV_A427VzKFheh8D26DPvagFMZ5CTck1zEqSzam7feI7mcVxHo-5nq04jih366cgxrecq254eO2PRCxwhZ8S4_gJLEkw9qHA4iDvd6hSEQ9PKZn0R2O3BFDrb6nOCAKe8l9beXFpOeocqUmariVDwK3e6Yz8nLjmSrZRRRwmksf_rYaOkeuyn6aeKPWswyCyogNe2gqWjMJTLWMJjEBzxkHUAsxQThSgP1XaXFG7pjWAGJf1vCVz3MwuqEtFoGE0UEe06t0_xjnKoDntA4yZVKOyZRIwa7ix8WJZuaL8y4ng"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"GoldenId\": \"ABFSG-000000016\",  \n    \"lob\": \"\",    \n    \"lobClientCode\": \"\",\n    \"productholding\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/demographicview",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"demographicview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Aggregated View",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "sess_map=ffbweuqswwutyqyvcbqqfbaarryxfdyyevfuaqcwvrfzayxvbecycsbcxvyruwrcfebbyeqaxztfreewdxabavseevqxxyafbxxvvtzbduewdfzfefrfdaetteyuzzswrbwrbddxaabtueczrdzbfytevrxzzwwcbvwzvzsbazstdesq; XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc0MTg1Njg0NiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NDE4NjA0NDYsImlhdCI6MTc0MTg1Njg0NiwidmVyc2lvbiI6MiwianRpIjoiZmQ5ZDliZmEtM2E3MS00ZjIxLWE1MDItNDA1YTNhMjEyZDE1IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.iRgJBhXD63xjrKLNzoWyf5eZM9scjju4USCHr8D1Pp5RGUlIyQ7O-EsucYyBYgVz_X5YQw3uSk7XrfQxlW0vKI3DVSa-h2uWMSEormTFuRAn35wtjC4yA9OA0UF_Dm6uovo7DBuyshHyLKLrqTtTxsA-R5vfD1aCMNRPboiZhu1h7_G0Kd29v3chSJgXQj9Ygvm4HzKAgTSWZPm3PaYsGBsSb31A9AyUs-2QvxPBs-w5EA6plPSP8-fWHW8beF8im7Oj6knCZCbLIlOWxDEybdfusWASau2UdrnXsJep8apt0V-Dopsd3aoPAXClNJkVPjL7q-nuPRxKbRfz3TMNmA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ObjRequest\": {\n        \"GoldenId\": \"ABFSG-000000100\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-oneabc/getAggregatedView",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-oneabc",
+								"getAggregatedView"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sprinklr entity search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc1NzM5OTE0NSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NTc0MDYzNDUsImlhdCI6MTc1NzM5OTE0NSwidmVyc2lvbiI6MiwianRpIjoiYjI2ZDk2Y2MtZWEyZi00YWIwLTkwMDMtZjA4YWFjODYxOGQ2IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.aWliRoJQ025op0nxJhygq1mnDqHrsbP4hgmaXW8Rlf1xVVU6YUOhqGyJAb0D0WT92ywq9h0SQZoG7zVr9PGvM-ITHMYzBcIlqlgl0HiZ2Iuk6WKqobr4xkANNrbjajM0csYR2rbnLVPrZFTKFgIeWs9FiSeolIfSbie4Pss0lWz7l190DUVSEOSgUEPmUYsweYh4-Nn6cxbfQ_lSVRB76zLdfT_tzHYbXleWg45_tPTWeLoIm5R0gjQ4i4VWKTOCW-DJNWRbYlZmF58c0MTX1T4lkQAtwqh2iW0M45W4fYC0xwxHmYz9lZeeAWlgMPNuShJWSX0enHI_qN8LCemfuQ"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerEmail\": \"abc@gmail.com\",\n    \"customerMobile\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/sprinklrentitysearch",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"sprinklrentitysearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pocket Insurance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTI0OTcwOCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzkyNTMzMDgsImlhdCI6MTczOTI0OTcwOCwidmVyc2lvbiI6MiwianRpIjoiMDY4NmIxMDQtN2MzNC00ZWI0LTlkNWUtMjcxN2U2NTEwNzQ3IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.DHkXkp5oDZGS1rG_ffrIAEaUJ5Dhf7vXcnvzHQWYebElKPqmbGWhvleKni5lTzy4Ys1ATDL2IeF3kq2xIFarRRp4I_4vdcTvvKrMYtwxgl8KLHgrlYU3R9NQbwlRcf2f4UfT5u12O2bGyJE8ZnQ8bHujixKI3TuilXDRORiBlUWnGpBk8mA3WYNVzl-NeDJnZlQy0Qgj4v1SWg_s3gtwdxfnKNMoF-71vj3emrBlrnhRsgVxuDCHYGfAusnhS1tE1SEpK6QHtFBEudk0dKJsiKREeMEB4w5HqO1tshnK7WXVzcG3ncPHzddk2v1fgg0amU_iiVg4BsWCU9uMMpSFOA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"\",\n    \"emailId\": \"\",\n    \"customerId\": \"106287\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getpocketinsurancedetails",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getpocketinsurancedetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gold Loan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTI0OTcwOCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzkyNTMzMDgsImlhdCI6MTczOTI0OTcwOCwidmVyc2lvbiI6MiwianRpIjoiMDY4NmIxMDQtN2MzNC00ZWI0LTlkNWUtMjcxN2U2NTEwNzQ3IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.DHkXkp5oDZGS1rG_ffrIAEaUJ5Dhf7vXcnvzHQWYebElKPqmbGWhvleKni5lTzy4Ys1ATDL2IeF3kq2xIFarRRp4I_4vdcTvvKrMYtwxgl8KLHgrlYU3R9NQbwlRcf2f4UfT5u12O2bGyJE8ZnQ8bHujixKI3TuilXDRORiBlUWnGpBk8mA3WYNVzl-NeDJnZlQy0Qgj4v1SWg_s3gtwdxfnKNMoF-71vj3emrBlrnhRsgVxuDCHYGfAusnhS1tE1SEpK6QHtFBEudk0dKJsiKREeMEB4w5HqO1tshnK7WXVzcG3ncPHzddk2v1fgg0amU_iiVg4BsWCU9uMMpSFOA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"\",   \n    \"emailId\": \"\",        \n    \"customerId\": \"115659\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getloandetails",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getloandetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "App Pages Api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc0MDY3NTI0NiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NDA2Nzg4NDYsImlhdCI6MTc0MDY3NTI0NiwidmVyc2lvbiI6MiwianRpIjoiMzM2OGViODktZjIxZC00M2M4LThiYWEtMzdjNjBkYTVhY2QzIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.YavhnSHuGO_n0OWkd1xagyLftPE3yApYTikGuPmmqZKuay3R_UNMHMrxrHS5axBPn9C8RCjtMU4thkkP4PK-mx5sTU1lcompAx5Dk5QLmt-0Oy2C38EOeEjc53_qhzDJUCXlVEL5wjYBe-S3MqCn4K0fl5OlP_bfWRbj11hrzlGiOr8tsUpSizmb6rA_F8HdxRd4YwX1uGMui2SEyGmqdqXlRoDEHLXUUf0ii_sQzLc92UjhP_YV0hXZeHPEXN_zqZ-8x_pBon3x72COmrHDS1JruWF6tHgvVbyzWHSPYTfHG5msRPSok5PF7HqMnqdE-qex6MfYILi1GI7cggcuFg"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"8593993121\",\n    \"emailId\": \"vaseemanwarafi@gmail.com\",\n    \"customerId\": \"19923\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getapppages",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getapppages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Portfolio Track Api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc0MTM1MDM2NiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NDEzNTM5NjYsImlhdCI6MTc0MTM1MDM2NiwidmVyc2lvbiI6MiwianRpIjoiMmMzMjJiNTItZTE4Yy00NGU4LWE3YmQtNGMzNWQxYjRiNGYxIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.Pg_HL_lXT29_uLxESh0HK5dbvQQnV3-3mdDq9khH5m-4zOdf1bxdaOnOIdwCbaAAxMouwqtFBY4TLhSlAXBqAw6Wf1GTmMgH1Q9V5UsjQKKjz5ihS7qEh33EH3v-sMbwwwVYZsLczNcTAHg8ChFYyzfr808dkfDNYTUlV7DywfKH1n1TWYSRsSaXGgRf_XcjeSR1RAX3BRrOggCXbI3799PsdXFbqNR0jPoEUwUvtceESRV2rPEXkh-BVXArqa38GiJVwnzf5JohcN3uWMjTexpEnVCkzLRxUTPiDtA3iWVYvTUAe2fLzOk2x8TXQzci_dyE6ttIt1NwDIx5gAs7FA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "sess_map=dvbysrcacaawcdaaasauqbubdvzbwawbewfccxtvvwfqectuavccvvcxdwducwyxrvcaczaesvxbdcyctbfddrwcxuyyxecseyftsyqfbudbcstrxyqbwczrtwxszsysucsbywcdrwvuqetbatyawbssxbfxxqxdxszfeaycrvrqqsuayeaxdesq; XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"\",\n    \"emailId\": \"\",\n    \"customerId\": \"106944\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/portfoliotrackinfo",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"portfoliotrackinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loyalty & Rewards",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTk2NzM4MSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3Mzk5NzA5ODEsImlhdCI6MTczOTk2NzM4MSwidmVyc2lvbiI6MiwianRpIjoiYjE3ZWJmODYtNmE0OC00ODYyLWJiZjQtY2E5ZTBkZjMxYzI0IiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.JTkXTm6ul_RAdAjT6uYt454lKxpZSfd6hhb43qIMfEU8oaFefHac1OgoRIOeUjThcCdasObeAhi7Y06-0YQiiFR4MEjAg539QUCZI0IiqMu7VOav4HBKQyx9ilUBGfQvzExG-HYAwcAc4Zr4vMUUi4lnkb-MkEw7UbdjZ_rhZ8x-PeR1vOxz8FMlyMqHxVvJkFCsYqaiKJnQsuoLJA7cHC_n9spU-Kxsk0AeWzM3RA57jQY7vwtE3WCL4iNI-6wyxSAh7hZuc9b5KwHNazOpsxyue5mF_tiCG2q8IL30Ft9OHoB47TfBu_4-RXH-mp5ACpKoMjGkET3gyA4jDJyJVQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": \"18102\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/loyaltyrewards",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"loyaltyrewards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigiGold - Transaction Date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTczOTM4MTUwOSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzkzODUxMDksImlhdCI6MTczOTM4MTUwOSwidmVyc2lvbiI6MiwianRpIjoiNzk1MzU4NzUtMTlhOS00MzEzLWJmNDMtYjk2ZTVjZTMyZDFkIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.N80SOqsQmQgb0mI5UTwTTRoeoQMR7_xguVYaxmf2nQI5trL6yulRidxeQ1HSwZQOziEjzuFOM38GMyG8a5mWZ2wExlimyPHJNkTYlngxteXkz75_maCOEu2vN8Z7dOXH6J2upDBmuxEM8oAbTO1fyUvZv2mkv1jenwtfh9cc-e15ZwTJBWTIdyd2yqKLw4Ze-kJDaRm4A_d-KiLURYAD8ZBqiSGpMyx-8tPlvXFNDmtdnzCItR9ByFuAMku_sMhx9h_zXx1ZhWlvcH2yvjR6QXglLd2YMMqW0w_t7D6kFeMIUDqtOhMNArK-IeWemsiByqGB0sL3gPkvCnA2hx_wrA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"\",       \n    \"emailId\": \"\",\n    \"customerId\": \"112393\",   \n    \"startDate\": \"2024-05-21\",\n    \"endDate\": \"2025-01-21\"   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/getdigigoldtransactiondate",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"getdigigoldtransactiondate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MutualFundLast5Transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc0MDc2MDgxNiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NDA3NjQ0MTYsImlhdCI6MTc0MDc2MDgxNiwidmVyc2lvbiI6MiwianRpIjoiNmE0YzhiMjYtYWI1Zi00YjY0LTk1MWUtZjc4ZjY2ZDAxZTgwIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.OgMr1nBNUTwS84Fr4ZfYxQTWVN4BaTvi21Ca8Q6UAxIG5z7Mqbi8KtxcQWDV5B3gXRA1I_P13tH8PA64uEfGsTSKW8eDoAUWQyroymeLVCUllBfkz6uCnJj1zY9npANcU2-ZRLII56Yw55GsWbYdmTmx0S105iLTr-Km3p4noE6HfjUsa6ATe7_z_LupC-DjIB6Bo_aBSCLZkhm57RV21quO_4QYoQtVo81BlLI2FUmrV3N4Lnl-3GzsT-9CAol7ILAyuCTwONTVP2vUuUO9hvEa9tTbELElbBx7ISUonscGZSvum_AHOOgYhOtxq9J0Nq-Cl_ApluQSM66EnVqzcw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobileNumber\": \"\",\n    \"emailId\": \"\",\n    \"customerId\": \"86301\",\n    \"folioNumbers\": [\n        \"ZNWQFTCLE97MH\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcd/mftransactiondetails",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcd",
+								"mftransactiondetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Legacy Case API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzdDhoNDUwOTRjMm45Z25pbGJtcjFsaWZiOCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic2ZkY1wvYXV0aCIsImF1dGhfdGltZSI6MTc0MDY0MDMzMCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3NDA2NDM5MzAsImlhdCI6MTc0MDY0MDMzMCwidmVyc2lvbiI6MiwianRpIjoiOTA1ZjVmN2YtNjBkNi00NGZhLTk4NzAtNTdjMDdiMWI3NDliIiwiY2xpZW50X2lkIjoiM3Q4aDQ1MDk0YzJuOWduaWxibXIxbGlmYjgifQ.bF7TjALSYobaWZrA--vJS6y9JHeG-WvcEgXgr8JWql8dRBz0RJ9fDDPCbQMHtY6fYPFv00xfhpTfN5CJG6wGCwmFtqSmU8G-ccOfssnr1v7v0UWUPYtQOxvihJG-P9ddFzg7Kn1e5_-QIYD3w1bdWBHfYUd9YHy6JbMbQK532JusUfha2Ko1o0aasStYCvn2LN1P-oNZtss1YQLoyGUsBqX1MqJk0p7phsUW8KozMeO61N0SPuZRlnoC546LfWxkmaMf7lMFcXMuiYKzWbLNML0tUSpVNhtHiUHpESK80iNZKFsNqnm0BsXHiMvln_eeDji-SvraXjI0cut4gxHqdQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n\n\n\n\n\n    \n{\n    \"PhoneNumber\": \"9406223346\",\n    \"Email_Id\": \"\",\n    \"LOB\": \"OneABC\",\n    \"FromDate\": \"2025-02-01\",\n    \"ToDate\": \"2025-02-27\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/crm-abcl/getcrmcasedata",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"crm-abcl",
+								"getcrmcasedata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Litmus Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJraWQiOiJHY3llWkhabnJQNHNuWm1ubHdiSWRQdEh0UzBxSmxneSs4YTdDNG5pTGVJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIycW82dXVpdTJodGk4Y2llcHM3aWF1cGtjbiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYWJjbC1saXRtdXN3b3JsZFwvYXV0aCIsImF1dGhfdGltZSI6MTczNjc2OTU2OCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV8wSDh0eEJvWFUiLCJleHAiOjE3MzY3NzMxNjgsImlhdCI6MTczNjc2OTU2OCwidmVyc2lvbiI6MiwianRpIjoiMjM3Nzk1Y2MtZTNjNy00NmYxLTlkZGMtY2Q2YzU5YWY2Zjk1IiwiY2xpZW50X2lkIjoiMnFvNnV1aXUyaHRpOGNpZXBzN2lhdXBrY24ifQ.SEW0R_1c_xKt7WeNLkZ_dGOYJ1dxj8_LqJG0MBTK83PYm9nmSZBukfD0y2Hq1jNaskB3jjqB9uGAtcsc6YTT8M7zQc9Vs-iI27_8zrimuFhDK6qCbNNpqNqpZ9lfewHBMSUe61KoCMumAwrGF4TXIWazYs9hWywK8DCY4Ww1orbk6GQBXdgqdrq8sfSZfXUnEsJurmSCsRY2qgux5jshT67nW2ZqTdpnYrEFLemc3Vt2YCp3OGEDmowJJBVM9vCIxVQJJNADi7EnemsD2F2axd48uOE8WS23bqiEP-AOCHadYXW2N6Sd7xs1CSut-XQnex-vbtpXeDCwUf4rd0l6CQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "XSRF-TOKEN=269d8857-9e3d-4ada-9914-c8b21b9ecb63; sess_map=xxxswtwuwazvwxwfzurvswdevvybyvsvyczsddwxrattxuqcddvswdzaaxcqacuxqswwtezaetbytaadqeeewbdscrftvtzxzaydbwaeveyqwvvdsrvawbrwfueefrcwyfcevbxytzazyqvqayfsftqcczvytebqywrfyqaebxaxayxq"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Request_Date\": \"2024-01-23T08:41:13.000+0000\",\n    \"Responded_on\": \"2024-01-23T09:41:13.000+0000\",\n    \"Rated_Language\": \"english\",\n    \"Primary_Question_NPS\": \"1\",\n    \"Primary_Comment\": \"Understanding the customer\",\n    \"Rated_Medium\": \"EMAIL\",\n    \"Case_Number\": \"00006403\",\n    \"Invitation_Id\": \"0c14eb5d9d257a1d4772c3df523046cd58308ca877ff95abb8b74795\",\n    \"Business_unit\": \"ONEABC\",\n    \"Customer_Name\": \"Navin\", \n    \"Customer_Phone\": \"3948372298\", \n    \"Sub_LOB\": \"ABCD\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.abcscuat.com/sfdc-abcl/litmusupdate",
+							"protocol": "https",
+							"host": [
+								"api",
+								"abcscuat",
+								"com"
+							],
+							"path": [
+								"sfdc-abcl",
+								"litmusupdate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
